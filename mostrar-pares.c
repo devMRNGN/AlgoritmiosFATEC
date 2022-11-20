@@ -10,7 +10,6 @@ while(n >= 0) {
         printf("\n%d\n",n);
     }
     n--;
-
 }
 
 system("pause");
