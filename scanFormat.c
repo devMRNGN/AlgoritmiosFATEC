@@ -5,6 +5,8 @@
 // Ou seja, se o usuário digitar dois valores, será salvo um para cada variavel, respectivamente
 // stdin = standart in -> limpa memoria da entrada, teclado
 // fflush -> limpa a memoria de algo, no caso passando stdin, limpa memoria do dispositivo de entrada, normalmente o teclado
+// Se colocarmos pra exibir um caractere com %d, ele mostrará o número que corresponde ao caractere na tabela ASCCI
+// o mesmo vale o contrário, quando por um inteiro para ser mostrado como %c ele mostrará o caractere correspondente aquele número na tabela ASCCI
 
 int main(){
     char letra;
