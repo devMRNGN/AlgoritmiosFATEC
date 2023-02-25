@@ -7,6 +7,7 @@ void menu(){
     printf("1. Converter grau para radiano\n");
     printf("2. Converter radiano para grau\n");
     printf("3. Sair\n");
+    printf("Digite sua escolha:");
 }
 
 float degreeToRad(float degree){
@@ -20,33 +21,57 @@ double radToDegree(float rad){
 }
 
 int main(void){
-    int choose;
+    int choose, alternativeChoose;
     float degree,rad,result;
-    menu();
-    scanf("%d" , &choose);
-    switch(choose){
-        case 1:
-            printf("\nInforme o grau para ser transformado em radiano");
-            scanf("%f", &degree);
-            result = degreeToRad(degree);
-            printf("\n%.2f graus = %f radianos", degree , result);
-        break;
-        case 2:
-            printf("\nInforme o radiano para ser transformado em grau");
-            scanf("%f", &rad);
-            result = radToDegree(rad);
-            printf("\n%f radianos = %.2f graus", rad , result);
-        break;
-        case 3:
-            printf("\nSaindo....");
-        break;
-        default:
-            do{
-                printf("\nDigite uma opcao valida");
-                scanf("%d",&choose);
-            }while(choose != 2 && choose != 1 && choose != 3);
-        break;
-    }
+    do{
+        menu();
+        scanf("%d" , &choose);
+        system("cls");
+        switch(choose){
+            case 1:
+                do{
+                    printf("\nDigite o angulo em grau:");
+                    scanf("%f", &degree);
+                    system("cls");
+                    result = degreeToRad(degree);
+                    printf("\n%.4f graus = %.4f radianos", degree , result);
+                    printf("\nPressione enter para continuar...");
+                    scanf("%c");
+                    scanf("%c");
+                    system("cls");
+                    printf("1. MENU\n");
+                    printf("2. Converter novamente grau para radiano");
+                    scanf("%d" , &alternativeChoose);
+                    system("cls");
+                }while(alternativeChoose != 1);
+                choose = 0;
+            break;
+            case 2:
+                do{
+                    printf("\nDigite o angulo em radiano:");
+                    scanf("%f", &rad);
+                    system("cls");
+                    result = radToDegree(rad);
+                    printf("\n%.4f radianos = %.4f graus", rad , result);
+                    printf("\nPressione enter para continuar...");
+                    scanf("%c");
+                    scanf("%c");
+                    system("cls");
+                    printf("1. MENU\n");
+                    printf("2. Converter novamente radiano para grau");
+                    scanf("%d" , &alternativeChoose);
+                    system("cls");
+                }while(alternativeChoose != 1);
+                choose = 0;
+            break;
+            case 3:
+                printf("Obrigado por usar, pressione enter para sair!");
+                scanf("%c");
+                scanf("%c");
+                printf("Saindo....");
+            break;
+        }
+    }while(choose < 1 || choose > 3);
 
     return 0;
 }
