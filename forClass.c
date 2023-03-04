@@ -40,6 +40,17 @@ void module(){
     }
 }
 
+void cont(){
+    int x;
+    int count = 0;
+    do{
+        printf("Digite o valor de x: [inteiro]\n");
+        scanf("%d", &x);
+
+        printf("Vez %d no laco\n", x);
+    }
+
+}
 
 int main(){
     module();
