@@ -2,6 +2,48 @@
 #include <stdlib.h>
 #define DIM 4
 
+void exercicio2(){
+    char frase1[50] = {0};
+    char frase2[50] = {0};
+    int countFrase1, countFrase2 = 0;
+    printf("Digite uma frase: \n");
+    gets(frase1);
+    fflush(stdin);
+    printf("Digite outra frase: \n");
+    gets(frase2);
+    for(int i = 0; i < 50; i++){
+        if(frase1[i] !=0){
+            countFrase1++;
+        } else {
+            break;
+        }
+    }
+    for(int i = 0; i < 50; i++){
+        if(frase2[i] !=0){
+            countFrase2++;
+        }else {
+            break;
+        }
+    }
+    int iguais = 1;
+    if(countFrase1==countFrase2){
+        printf("\nAs duas palavras sao de tamanhos iguais\n");
+        for(int i = 0; i < countFrase1; i++){
+            if(frase1[i] != frase2[i]){
+                iguais = 0;
+                break;
+            }
+        }
+        if(iguais){
+            printf("As palavras sao iguais\n");
+        }else{
+            printf("As palavras sao diferentes\n");
+        }
+    } else {
+        printf("\nAs duas palavras sao de tamanhos diferentes\n");
+    }
+}
+
 void manhaVetor(){
     int vetor[100] = {0}; // Zera as 100 posições de um vetor, caso possua virgula e mais dados, atribui as primeiras
     for(int i = 0; i < 100; i++){
@@ -55,6 +97,7 @@ void elementoputs(){
 }
 
 int main(){
+    exercicio2();
     elementoputs();
     exercice1();
     return 0;
