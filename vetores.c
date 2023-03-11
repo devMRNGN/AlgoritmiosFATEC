@@ -1,6 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <strings.h>
+#include <string.h>
 #define DIM 4
+
+void exercicio2WithFunctions(){
+    char frase1[50] = {0};
+    char frase2[50] = {0};
+    fflush(stdin);
+    printf("Digite a frase um: \n");
+    gets(frase1);
+    fflush(stdin);
+    printf("Digite a frase dois: \n");
+    gets(frase2);
+    if(strlen(frase1) == strlen(frase2)){
+        printf("Sao de tamanhos iguais \n");
+        if(strcmp(frase1, frase2)== 0){
+            printf("E sao identicas \n");
+        } else {
+            printf("E nao sao identicas");
+        }
+    } else {
+        printf("Sao de tamanhos diferentes \n");
+    }
+}
 
 void exercicio2(){
     char frase1[50] = {0};
@@ -97,6 +120,7 @@ void elementoputs(){
 }
 
 int main(){
+    exercicio2WithFunctions();
     exercicio2();
     elementoputs();
     exercice1();
