@@ -52,8 +52,28 @@ void imprimaFormaDecrescenteImpares(){
     printf("\n");
 }
 
+void fibonacci(){
+    /* Escreva um programa que peça ao usuário para digitar
+    um número e imprima a sequência de Fibonacci até esse
+    número usando a estrutura de repetição while.*/
+
+    int numero;
+    int anterior1 = 1;
+    int anterior2 = 1;
+    int produto = 0;
+    printf("\nInforme o numero desejado: \n");
+    scanf("%d",&numero);
+    while((anterior1+anterior2) <= numero){
+        produto = anterior1 + anterior2;
+        printf("[ %d ] [ %d ] [ %d ]\n", anterior1, anterior2, produto);
+        anterior1 = anterior2;
+        anterior2 = produto;
+    }
+    printf("\n\n\n");
+}
 
 int main(void){
+    fibonacci();
     imprimaFormaDecrescenteImpares();
     calcularMedia();
     tabuada();
