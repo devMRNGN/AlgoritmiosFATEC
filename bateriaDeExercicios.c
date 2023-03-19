@@ -72,7 +72,28 @@ void fibonacci(){
     printf("\n\n\n");
 }
 
+void fizzBuzz(){
+    /* Escreva um programa que imprima os números de 1 a 100.
+    Mas para múltiplos de 3, imprima "Fizz" em vez do número e
+    para múltiplos de 5, imprima "Buzz". Para números múltiplos
+    de ambos 3 e 5, imprima "FizzBuzz".
+    Use a estrutura de repetição for.*/
+
+    for(int i = 1; i <= 100; i++){
+        if(i % 3 == 0 && i % 5 == 0){
+            printf("[ FizzBuzz ]");
+        }else if(i % 3 == 0){
+            printf("[ Fizz ]");
+        }else if(i % 5 == 0){
+            printf("[ Buzz ]");
+        }else {
+            printf("[ %d ]",i);
+        }
+    }
+}
+
 int main(void){
+    fizzBuzz();
     fibonacci();
     imprimaFormaDecrescenteImpares();
     calcularMedia();
