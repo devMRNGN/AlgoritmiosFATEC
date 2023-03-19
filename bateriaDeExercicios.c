@@ -106,7 +106,39 @@ void calculaSoma(){
     printf("Soma dos números de 1 a 100 = [ %d ]\n",acumulador);
 }
 
+void tabelaMultiplicacao(){
+    /* Escreva um programa que imprima a
+    tabela de multiplicação de 1 a 10 usando
+    a estrutura de repetição for.*/
+    int resultado;
+    for(int i = 1; i <= 10; i++){
+        for(int j = 1; j <= 10; j++){
+            resultado = i * j;
+            printf("%d x %d = [%d] ",i, j, resultado);
+        }
+        printf("\n");
+    }
+}
+
+void fatorial(){
+    /* Escreva um programa que calcule o fatorial de
+    um número fornecido pelo usuário usando a
+    estrutura de repetição do while.*/
+    int num;
+    int i = 2;
+    int resultado = 1;
+    printf("Informe um numero: ");
+    scanf("%d",&num);
+    while(num >= i){
+        resultado = resultado * num;
+        num--;
+    }
+    printf("Numero em fatorial: [ %d ]\n",resultado);
+}
+
 int main(void){
+    fatorial();
+    tabelaMultiplicacao();
     calculaSoma();
     fizzBuzz();
     fibonacci();
