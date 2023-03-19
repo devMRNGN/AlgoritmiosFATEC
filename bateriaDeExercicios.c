@@ -92,7 +92,22 @@ void fizzBuzz(){
     }
 }
 
+void calculaSoma(){
+    /* Escreva um programa que calcule a soma
+    de todos os números entre 1 e 100 usando
+    a estrutura de repetição do while. */
+
+    int acumulador = 0;
+    int i = 1;
+    while(i <= 100){
+        acumulador += i;
+        i++;
+    }
+    printf("Soma dos números de 1 a 100 = [ %d ]\n",acumulador);
+}
+
 int main(void){
+    calculaSoma();
     fizzBuzz();
     fibonacci();
     imprimaFormaDecrescenteImpares();
