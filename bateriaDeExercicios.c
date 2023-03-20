@@ -129,14 +129,52 @@ void fatorial(){
     int resultado = 1;
     printf("Informe um numero: ");
     scanf("%d",&num);
-    while(num >= i){
+    do{
         resultado = resultado * num;
         num--;
-    }
+    }while(num >= i);
     printf("Numero em fatorial: [ %d ]\n",resultado);
 }
 
+/* EXERCICIO MATRIZES */
+
+void vetorTenNumbers(){
+    /* Escreva um programa que leia um vetor de
+    10 números inteiros e imprima o maior e o
+    menor valor do vetor.*/
+    int vetor[10];
+    for(int i = 0; i < 10; i++){
+        printf("Informe um numero: ");
+        scanf("%d",&vetor[i]);
+    }
+    int maior = vetor[0];
+    int menor = vetor[0];
+    for(int i = 0; i < 10; i++){
+        if(vetor[i] > maior) maior = vetor[i];
+        if(vetor[i] < menor) menor = vetor[i];
+    }
+    printf("Maior numero [ %d ] - Menor numero [ %d ]\n",maior,menor);
+}
+
+void somaDosParesDeUmVetor(){
+    /* Escreva um programa que leia um vetor de
+    10 números inteiros e imprima a soma de todos
+    os números pares do vetor.*/
+    int vetor[10];
+    int sum = 0;
+    for(int i = 0; i < 10; i++){
+        printf("Informe um número: \n");
+        scanf("%d",&vetor[i]);
+    }
+    for(int i = 0; i < 10; i++){
+        if(vetor[i] % 2 == 0) sum+=vetor[i];
+    }
+    printf("A soma dos numeros pares da [ %d ]\n",sum);
+}
+
 int main(void){
+    somaDosParesDeUmVetor();
+    vetorTenNumbers();
     fatorial();
     tabelaMultiplicacao();
     calculaSoma();
