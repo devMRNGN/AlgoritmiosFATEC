@@ -172,7 +172,100 @@ void somaDosParesDeUmVetor(){
     printf("A soma dos numeros pares da [ %d ]\n",sum);
 }
 
+void substituaNegativoPorZero(){
+    /* Escreva um programa que leia um vetor de
+    10 números inteiros e substitua todos os valores
+    negativos por zero.*/
+    int vetor[10];
+    for(int i = 0; i < 10; i++){
+        printf("Informe um valor: \n");
+        scanf("%d",&vetor[i]);
+    }
+    for(int i = 0; i < 10; i++){
+        if(vetor[i] < 0) vetor[i] = 0;
+    }
+    for(int i = 0; i < 10; i++){
+        printf("[ %d ] - ", vetor[i]);
+    }
+    printf("\n");
+}
+
+void diagonalPrincipal(){
+    /* Escreva um programa que leia uma matriz 3x3
+    e imprima a diagonal principal da matriz.*/
+    int matriz[3][3];
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            printf("Informe um valor: \n");
+            scanf("%d",&matriz[i][j]);
+        }
+    }
+    for(int i = 0; i < 3; i++){
+        printf("index %d%d = [ %d ] - ",i,i,matriz[i][i]);
+    }
+    printf("\n");
+}
+
+void somaDasColunas(){
+    /* Escreva um programa que leia uma matriz 3x3
+    e imprima a soma dos valores de cada coluna da matriz.*/
+    int matriz[3][3];
+    int soma[3] = {0};
+    for(int linha = 0; linha < 3; linha++){
+        for(int coluna = 0; coluna < 3; coluna++){
+            printf("Informe um valor: \n");
+            scanf("%d",&matriz[linha][coluna]);
+        }
+    }
+    for(int coluna = 0; coluna < 3; coluna++){
+        for(int linha = 0; linha < 3; linha++){
+            soma[coluna] += matriz[coluna][linha];
+        }
+    }
+    for(int i = 0; i < 3; i++){
+        printf("Soma %d = [ %d ]\n",i,soma[i]);
+    }
+}
+
+void somaDeMatrizes(){
+    /* Escreva um programa que leia duas matrizes 3x3
+    e imprima a soma das duas matrizes.*/
+    int matriz1[3][3];
+    int matriz2[3][3];
+    int soma[3][3];
+    printf("Informe matriz 1 \n");
+    for(int linha = 0; linha < 3; linha++){
+        for(int coluna = 0; coluna < 3; coluna++){
+            printf("Informe um valor: \n");
+            scanf("%d",&matriz1[linha][coluna]);
+        }
+    }
+    printf("Informe matriz 2 \n");
+    for(int linha = 0; linha < 3; linha++){
+        for(int coluna = 0; coluna < 3; coluna++){
+            printf("Informe um valor: \n");
+            scanf("%d",&matriz2[linha][coluna]);
+        }
+    }
+    for(int linha = 0; linha < 3; linha++){
+        for(int coluna = 0; coluna < 3; coluna++){
+            soma[linha][coluna] = matriz1[linha][coluna] + matriz2[linha][coluna];
+        }
+    }
+    printf("Soma das matrizes\n");
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            printf("[ %d ]",soma[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 int main(void){
+    somaDeMatrizes();
+    somaDasColunas();
+    diagonalPrincipal();
+    substituaNegativoPorZero();
     somaDosParesDeUmVetor();
     vetorTenNumbers();
     fatorial();
